@@ -11,17 +11,12 @@ To install for development:
 `python3 --version`
 
 2. Create a python virtual environment.  
-`python3 -m venv NNEnvironment`
+`python3 -m venv CaptchaOCR-API`
 
 3. Activate the CNN virtual environment.  
-`source ./NNEnvironment/bin/activate`
+`source ./CaptchaOCR-API/bin/activate`
 
-4. Install the dependencies for NNEnvironment.  
-
-    a. For machines with discrete GPUs (Graphics Cards):  
-`pip install -r ./requirements_CUDA.txt`
-
-    b. For machines without:  
+4. Install the dependencies for CaptchaOCR-API.  
 `pip install -r ./requirements.txt`
 
 ### Windows
@@ -30,35 +25,27 @@ To install for development:
 `py --version`
 
 2. Create a python virtual environment.  
-`py -m venv NNEnvironment`
+`py -m venv CaptchaOCR-API`
 
 3. Activate the CNN virtual environment.  
 
     a. For Command Line:  
-`.\NNEnvironment\Scripts\activate.bat`
+`.\CaptchaOCR-API\Scripts\activate.bat`
 
     b. For PowerShell:  
-`.\NNEnvironment\Scripts\activate.ps1`
+`.\CaptchaOCR-API\Scripts\activate.ps1`
 
-4. Install the dependencies for NNEnvironment.  
-
-    a. For machines with discrete GPUs (Graphics Cards):  
-`pip install -r ./requirements_CUDA.txt`
-
-    b. For machines without:  
+4. Install the dependencies for CaptchaOCR-API.  
 `pip install -r ./requirements.txt`
 
 
 ## Run
-Instructions to run the server will come soon.
+Instructions to run the server.
 
 1. Run the virtual environment.
 
-    a. For macOS and Linux:  
-`source ./NNEnvironment/bin/activate`
+2. Make migrations.
+`python manage.py migrate`
 
-    b. For Windows:  
-`.\NNEnvironment\Scripts\activate.bat`
-
-2. Train the nerual network.  
+3. Run the server.  
 `python manage.py runserver`
