@@ -44,7 +44,7 @@ Instructions to run the server.
 
 1. Run the virtual environment.
 
-2. Make migrations.
+2. Make migrations.  
 `python manage.py migrate`
 
 3. Run the server.  
