@@ -1,6 +1,6 @@
 from django.db import models
 
-class Captcha():
+class Captcha(models.Model):
     image = models.ImageField()
     title = models.CharField(max_length=5, blank=True)
 
