@@ -1,5 +1,6 @@
 # CaptchaOCR API
-This repository is the backend for CaptchaOCR. It requires a trained model to run, please see the [CNN Repository](https://github.com/CaptchaOCR/API) for training.  
+This repository is the backend for CaptchaOCR.  
+It requires a trained model to run, please see the [CNN Repository](https://github.com/CaptchaOCR/API) for training.  
 
 
 ## Installation
