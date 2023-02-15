@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CaptchaocrapiConfig(AppConfig):
+class CaptchaapiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'CaptchaOCRAPI'
+    name = 'captchaAPI'

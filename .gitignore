@@ -1,3 +1,4 @@
 CaptchaOCR-API/**
 .vscode
 .DS_Store
+db.sqlite3
