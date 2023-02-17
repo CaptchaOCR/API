@@ -1,4 +1,4 @@
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, response, status
 
 from .serializers import CaptchaSerializer
 from .models import Captcha
@@ -8,11 +8,13 @@ class CaptchaViewSet(viewsets.ModelViewSet):
     serializer_class = CaptchaSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-'''
-    def create(self, request ):
+    def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        instance = serializer.save()
 
-        Captcha.objects.create().save()
-'''
+        self.perform_create(serializer)
+
+        headers = self.get_success_headers(serializer.data)
+        return response.Response(
+            serializer.data, status=status.HTTP_201_CREATED, headers=headers
+        )
