@@ -6,4 +6,5 @@ class CaptchaSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Captcha
-        fields = ('title', 'image')
+        fields = ['url', 'title', 'image']
+        read_only_fields = ['url', 'title', 'image']
