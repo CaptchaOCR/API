@@ -1,0 +1,6 @@
+CaptchaOCR-API/**
+images/**
+.vscode
+.DS_Store
+db.sqlite3
+.env
