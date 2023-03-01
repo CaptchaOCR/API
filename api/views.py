@@ -6,7 +6,7 @@ from .models import Captcha
 from .func import run_model
  
 class CaptchaViewSet(viewsets.ModelViewSet):
-    queryset = Captcha.objects.all()
+    queryset = Captcha.objects.get_queryset().order_by('id')
     serializer_class = CaptchaSerializer
     permission_classes = [permissions.IsAuthenticated]
 
