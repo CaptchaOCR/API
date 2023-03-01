@@ -6,5 +6,5 @@ class CaptchaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Captcha
-        fields = ['id', 'image']
-        read_only_fields = ['id', 'image']
+        fields = ['id', 'title', 'image']
+        read_only_fields = ['id', 'title', 'image']
