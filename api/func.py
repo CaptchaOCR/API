@@ -5,9 +5,14 @@ def run_model(filename):
     errno = 0
     message = ""
 
-    if(not default_storage.exists(filename)):
+    if(filename == None):
+        errno=1
+        message="No filename specified"
+
+    elif(not default_storage.exists(filename)):
         errno=1
         message="Could not find " + filename
+
     else:
         file = default_storage.open(filename, mode='r')
         # Do model logic here
