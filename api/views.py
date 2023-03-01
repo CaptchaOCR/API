@@ -1,7 +1,9 @@
-from rest_framework import viewsets, permissions, response, status
+from rest_framework import viewsets, permissions, status
+from rest_framework.response import Response
 
 from .serializers import CaptchaSerializer
 from .models import Captcha
+from .func import run_model
  
 class CaptchaViewSet(viewsets.ModelViewSet):
     queryset = Captcha.objects.all()
@@ -15,6 +17,15 @@ class CaptchaViewSet(viewsets.ModelViewSet):
         self.perform_create(serializer)
 
         headers = self.get_success_headers(serializer.data)
-        return response.Response(
+        
+        response = Response(
             serializer.data, status=status.HTTP_201_CREATED, headers=headers
         )
+        print(serializer.data)
+
+        result = run_model()
+
+        response.data['code'] = result[0]
+        response.data['info'] = result[1]
+
+        return response
