@@ -7,7 +7,3 @@ class Captcha(models.Model):
 
     def __str__(self):
         return self.title
-    
-    def delete(self):
-        self.image.delete()
-        super(Captcha, self).delete()
