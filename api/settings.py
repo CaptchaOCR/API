@@ -128,6 +128,9 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = '/images/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -136,14 +139,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CSRF Cookies
 
-# CSRF_COOKIE_SECURE=True
+CSRF_COOKIE_SECURE=True
 
-# CSRF_COOKIE_AGE=None
+CSRF_COOKIE_AGE=None
 
-# SESSION_COOKIE_SECURE=True
+SESSION_COOKIE_SECURE=True
 
 # Secure SSL
 
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-SECURE_SSL_REDIRECT=False
+# SECURE_SSL_REDIRECT=True
