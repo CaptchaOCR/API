@@ -19,5 +19,4 @@ def run_model(filename):
 
         default_storage.delete(filename)
 
-    result = (errno, message)
-    return result
+    return (errno, message)
