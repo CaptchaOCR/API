@@ -1,5 +1,7 @@
 from django.core.files.storage import default_storage
 
+from CaptchaOCR.CNN.run_model import run_model 
+
 def run_model(filename):
 
     errno = 0
@@ -15,7 +17,13 @@ def run_model(filename):
 
     else:
         file = default_storage.open(filename, mode='r')
-        # Do model logic here
+
+        # Model logic
+        try:
+            message = run_model(filename)
+        except Exception as e:
+            errno = 1
+            message = 'Run model unsuccessful:\n', e
 
         default_storage.delete(filename)
 
